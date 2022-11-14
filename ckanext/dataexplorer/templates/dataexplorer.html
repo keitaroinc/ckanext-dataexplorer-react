@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block page %}
+  {% set serialized_suggested_fields_dpkg = h.suggested_filter_fields_serializer(datapackage, resource_view) %}
    <div class="data-explorer" id="data-explorer-{{resource_view.id}}" 
-   data-datapackage="{{ h.dump_json({ "widgets": widgets, "datapackage": datapackage }) }}"> </div>
+   data-datapackage="{{ h.dump_json({ "widgets": widgets, "datapackage": serialized_suggested_fields_dpkg }) }}"> </div>
     {% if h.ckan_29_or_higher %}
       {% include 'snippets/assets_2.9.html' %}
     {% else %}
       {% include 'snippets/resource_2.8.html' %}
+      {% resource 'iaea/css/dataexplorer.css' %}
     {% endif %}
     
 {% endblock %}
