@@ -170,7 +170,7 @@ class DataExplorerView(DataExplorerViewBase):
 
     def info(self):
         return {'name': 'dataexplorer_view',
-                'title': 'Data Explorer',
+                'title': 'Data Explorer Custom',
                 'icon': 'table',
                 'requires_datastore': True,
                 'default_title': p.toolkit._('Data Explorer'),
