@@ -6,7 +6,7 @@
 
 <div class="form-group control-select">
   <label class="control-label" for="group">Series (Axis 2)</label>
-  <div class="controls ">
+  <div>
     <select multiple id="chart_series" name="chart_series" class="form-control">
       {% for option in chart_series%}
         <option value="{{ option.value }}"{% if option.value in data.chart_series %} selected {% endif %}>{{ option.text or option.value }}</option>
